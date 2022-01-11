@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="red" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css"/>
+   
+    <title>Shoping list</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="book-list">
+        <div class="book-item">
+          <div class="book-item-cover">
+            <img src="./images/5131OWtQRaL._SX381_BO1,204,203,200_.jpg" alt="image"/>
+          </div>
+          <div class="book-item-info">
+            <ul class="book-item-list">
+              <li class="book-item-list-name"><a href="index-douglas.html">JavaScript:The Good Parts</a></li>
+              <li class="book-item-list-author">Douglas Crockford</li>
+              <li class="book-item-list-price">$15</li>
+              <li class="book-item-list-btn"><button class="addToCart">Add to cart</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="book-item">
+          <div class="book-item-cover">
+            <img src="./images/51mb6UvEDdL._SX378_BO1,204,203,200_.jpg" alt="image"/>
+          </div>
+          <div class="book-item-info">
+            <ul class="book-item-list">
+              <li class="book-item-list-name"><a href="index-david.html">JavaScript:The definitive guide</a></li>
+              <li class="book-item-list-author">David Flanagan</li>
+              <li class="book-item-list-price">$20</li>
+              <li class="book-item-list-btn"><button  class="addToCart">Add to cart</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="book-item">
+          <div class="book-item-cover">
+            <img src="./images/maintainable-javascript-nicholas-zakas.jpg" alt="image"/>
+          </div>
+          <div class="book-item-info">
+            <ul class="book-item-list">
+              <li class="book-item-list-name"><a href="index-nicolas.html">Maintainable JavaScript</a></li>
+              <li class="book-item-list-author">Nicholas Zakas</li>
+              <li class="book-item-list-price">$25</li>
+              <li class="book-item-list-btn"><button class="addToCart" >Add to cart</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="book-item">
+          <div class="book-item-cover">
+            <img 
+            src="./images/Learning-React.jpg" 
+            alt="image"/>
+          </div>
+          <div class="book-item-info">
+            <ul class="book-item-list">
+              <li class="book-item-list-name"><a href="index-alex.html">Learning React</a></li>
+              <li class="book-item-list-author">Alex Banks & Eve Porcello</li>
+              <li class="book-item-list-price">$30</li>
+              <li class="book-item-list-btn"><button  class="addToCart">Add to cart</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="shopping-cart-table">
+             <h2>Your Order</h2>
+             <ul class="shopping-header">
+                <li>#</li>
+                <li>item</li>
+                <li>count</li>
+                <li>price</li>
+                <li>action</li>
+            </ul>
+            <div class="shopping-container">
+                 <div class="book-row"></div> 
+            </div>
+        <div class="total">Total: $ <span>0</span></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
