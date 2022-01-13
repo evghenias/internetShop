@@ -12,13 +12,13 @@ function ready() {
   }
 }
 
-function addToCartClicked(event) {
-let button = event.target
-  let shopItem = button.parentElement.parentElement.parentElement
-  let name = shopItem.getElementsByClassName('book-item-list-name')[0].innerText
-  let price = shopItem.getElementsByClassName('book-item-list-price')[0].innerText
-  addItemToCart(name, price)
-  updateCartTotal()
+ function addToCartClicked(event) {
+    let button = event.target
+    let shopItem = button.closest('.book-item')
+    let name = shopItem.getElementsByClassName('book-item-list-name')[0].innerText
+    let price = shopItem.getElementsByClassName('book-item-list-price')[0].innerText
+    addItemToCart(name, price)
+    updateCartTotal()
 }
 
 function addItemToCart(title, price) {
@@ -26,14 +26,14 @@ function addItemToCart(title, price) {
   cartRow.classList.add('book-row')
   let cartItems = document.getElementsByClassName('shopping-container')[0]
   let cartItemNames = cartItems.getElementsByClassName('title')
-  for (var i = 0; i < cartItemNames.length; i++) {
+  for (let i = 0; i < cartItemNames.length; i++) {
       if (cartItemNames[i].innerText == title) {
           alert("Book " + title + ' is already in the cart')
           return
       }
   }
 
-  var cartRowContents =`
+  let cartRowContents =`
     <ul class="shopping-body">
         <li class="ordernr">1</li>
         <li class="title">${title}</li>
@@ -58,19 +58,19 @@ function addItemToCart(title, price) {
 }
 
 function removeCartItem(event) {
-  let buttonClicked = event.target
-  buttonClicked.parentElement.parentElement.parentElement.remove()
+  let buttonClicked = event.target       
+  buttonClicked.closest('.book-row').remove()
   updateCartTotal()
 }
 
 function QuantityAddClicked(event) {
-let buttonClicked = event.target
-let cartRow=buttonClicked.parentElement.parentElement.parentElement.getElementsByClassName('quantity')[0]
-let quantity=cartRow.innerText
-quantity=parseFloat(quantity)+1
-if (quantity <=10){
-  cartRow.innerText=quantity
-  updateCartTotal()
+  let buttonClicked = event.target
+  let cartRow=buttonClicked.closest('.book-row').getElementsByClassName('quantity')[0]
+  let quantity=cartRow.innerText
+     quantity=parseFloat(quantity)+1
+        if (quantity <=10){
+     cartRow.innerText=quantity
+     updateCartTotal()
 } else {
   alert("Quantity can't be more than 10")
 }
@@ -78,7 +78,7 @@ if (quantity <=10){
 
 function QuantitySubClicked(event) {
 let buttonClicked = event.target
-let cartRow=buttonClicked.parentElement.parentElement.parentElement.getElementsByClassName('quantity')[0]
+let cartRow=buttonClicked.closest('.book-row').getElementsByClassName('quantity')[0]
 let quantity=cartRow.innerText
 quantity=parseFloat(quantity)-1
 if (quantity >=1){
@@ -93,7 +93,7 @@ function updateCartTotal() {
   let cartItemContainer = document.getElementsByClassName('shopping-container')[0]
   let cartRows = cartItemContainer.getElementsByClassName('shopping-body')
   let total = 0
-var orderNumber=1
+let orderNumber=1
   for (let i = 0; i < cartRows.length; i++) {
       let cartRow = cartRows[i]
       let priceElement = cartRow.getElementsByClassName('price')[0]		
